@@ -40,26 +40,33 @@ export default function HeroSection() {
 One-on-one and small group coaching with a former collegiate softball player.</p>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button className="group"
-                                        variant={"secondary"}
-                                    >
-                                        
-                                       See What We Specialize In
-
-                                       <ArrowRightIcon
-                                            className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
+                                    <Link href="#services" passHref>
+                                        <Button className="group"
+                                            variant={"secondary"}
+                                        >
+                                           <Link href="#contact">
+                                            <span>See What We Specialize In</span>                              
+                                           </Link>                                           
+                                           
+                                           <ArrowRightIcon
+                                                className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
+                                                
+                                                size={16}
+                                                aria-hidden="true"
+                                            />
                                             
-                                            size={16}
-                                            aria-hidden="true"
-                                        />
-                                        
-                                    </Button>
-                                
-                                    <Button className="group"
-                                        variant={"default"}
-                                    >
-                                        
-                                        Start Your Training Journey
+                                        </Button>
+                                    </Link>
+
+                                    <Link href="#contact" passHref>
+                                        <Button className="group"
+                                            variant={"default"}
+                                        >
+
+                                            <Link href="#contact">
+                                                <span>Start Your Training Journey</span>
+                                            </Link>
+                                            
 
                                         <ArrowRightIcon
                                             className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
@@ -68,7 +75,8 @@ One-on-one and small group coaching with a former collegiate softball player.</p
                                             aria-hidden="true"
                                         />
                                         
-                                    </Button>
+                                        </Button>
+                                    </Link>
 
                                 </div>
                             </div>
