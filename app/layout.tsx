@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DeGori Proformance - Personal Softball Training",
+  title: "Personal Softball Training in Pittsburgh, PA!",
   description: "Improve your game with private softball lessons in Pittsburgh. Hitting, fielding & skill development from a former collegiate player. Book today!",
   keywords: ['softball lessons Pittsburgh', 'private softball coach Pittsburgh', 'softball hitting lessons Pittsburgh', 'youth softball training Pittsburgh PA'],
   icons: {
