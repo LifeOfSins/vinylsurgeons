@@ -10,7 +10,6 @@ import { HeroHeader } from './header'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { ArrowRightIcon, MessageCircleQuestionMark } from "lucide-react"
-import { MovingButton } from "@/components/ui/moving-border";
 
 export default function HeroSection() {
     return (
