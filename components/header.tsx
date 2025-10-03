@@ -89,9 +89,7 @@ export const HeroHeader = () => {
                                     className='border-primary'
                                 >
 
-                                    <Link href="/dashboard/sign-in">
-                                        <span>Dashboard Login</span>
-                                    </Link>
+                                    
                                 </Button>
                             </div>
                         </div>
