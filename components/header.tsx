@@ -82,6 +82,17 @@ export const HeroHeader = () => {
                                         <span>Start Your Training Journey!</span>
                                     </Link>
                                 </Button>
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    variant="outline"
+                                    className='border-primary'
+                                >
+
+                                    <Link href="/dashboard/sign-in">
+                                        <span>Dashboard Login</span>
+                                    </Link>
+                                </Button>
                             </div>
                         </div>
                     </div>

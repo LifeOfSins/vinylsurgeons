@@ -7,7 +7,8 @@
 
 /** Colors **/
 :root {
-  --background: var(--color-white);
+  --background: oklch(.183 .006 285.79);
+  --background-dark: oklch(.183 .006 285.79);
   --foreground: var(--color-zinc-950);
   --card: var(--color-white);
   --card-foreground: var(--color-zinc-950);
@@ -35,7 +36,7 @@
 }
 
 .dark {
-  --background: #09080a;
+  --background: #fc0404;
   --foreground: var(--color-zinc-50);
   --card: #0a0a0a;
   --card-foreground: var(--color-zinc-50);

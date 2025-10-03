@@ -19,7 +19,7 @@ export default function ContactSection() {
                             <Link
                                 href="mailto:hello@tailus.io"
                                 className="text-lg text-primary hover:underline dark:text-blue-400">
-                                isabellariot@icloud.com
+                                isabella@degoriproformance.com
                             </Link>
                         </div>
                     </div>
