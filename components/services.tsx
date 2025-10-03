@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { faCalendar, faMap, faBaseballBatBall, faBaseball, faUserCheck, faUserPlus, faUserMinus, faDumbbell, faPersonRunning, faBrain } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image'
 import { ReactNode } from 'react'
@@ -122,7 +123,7 @@ const CardDecorator = () => (
 )
 
 interface CardHeadingProps {
-    icon: any
+    icon: IconDefinition
     title: string
     description: string
 }
