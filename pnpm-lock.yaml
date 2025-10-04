@@ -11,6 +11,9 @@ importers:
       '@base-ui-components/react':
         specifier: ^1.0.0-beta.4
         version: 1.0.0-beta.4(@types/react@19.2.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@fortawesome/fontawesome-svg-core':
+        specifier: ^7.1.0
+        version: 7.1.0
       '@fortawesome/free-solid-svg-icons':
         specifier: ^7.1.0
         version: 7.1.0
