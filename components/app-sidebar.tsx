@@ -35,7 +35,7 @@ const getStaticData = () => ({
   teams: [
     {
       name: "DeGori Proformance",
-      logo: GalleryVerticalEnd,
+      logo: "/logo.png",
       plan: "Enterprise Edition",
     },
   ],

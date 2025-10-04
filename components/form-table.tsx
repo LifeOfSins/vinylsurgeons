@@ -415,7 +415,7 @@ export default function FormTable() {
             {/* Filter by status */}
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="">
+                <Button variant="outline">
                   <FilterIcon
                     className="-ms-1"
                     size={16}
@@ -462,7 +462,7 @@ export default function FormTable() {
             {/* Toggle columns visibility */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="">
+                <Button variant="default">
                   <Columns3Icon
                     className="-ms-1"
                     size={16}
@@ -704,7 +704,7 @@ export default function FormTable() {
               <PaginationItem>
                 <Button
                   size="icon"
-                  variant=""
+                  variant="default"
                   className="disabled:pointer-events-none disabled:opacity-50"
                   onClick={() => table.firstPage()}
                   disabled={!table.getCanPreviousPage()}
@@ -743,7 +743,7 @@ export default function FormTable() {
               <PaginationItem>
                 <Button
                   size="icon"
-                  variant=""
+                  variant="default"
                   className="disabled:pointer-events-none disabled:opacity-50"
                   onClick={() => table.lastPage()}
                   disabled={!table.getCanNextPage()}
@@ -857,7 +857,7 @@ function RowActions({
         <div className="flex justify-end">
           <Button
             size="icon"
-            variant=""
+            variant="default"
             className="shadow-none"
             aria-label="Edit item"
           >

@@ -87,7 +87,7 @@ export default function StatisticCard3() {
             >
               <div className="flex items-center gap-2.5">
                 <span className="text-sm font-medium text-foreground">{item.name}</span>
-                <Badge size="sm" variant="outline">
+                <Badge variant="outline">
                   {item.plan}
                 </Badge>
               </div>
