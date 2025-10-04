@@ -4,6 +4,8 @@ import "@/app/globals.css";
 
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { ReactNode } from "react";
+import AuthGuard from './auth-guard';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,10 +29,9 @@ export const metadata: Metadata = {
   other: {
     'apple-mobile-web-app-title': 'DeGori Proformance',
   },
-
   openGraph: {
     title: "DeGori Proformance - Personal Softball Training",
-  description: "Improve your game with private softball lessons in Pittsburgh. Hitting, fielding & skill development from a former collegiate player. Book today!",
+    description: "Improve your game with private softball lessons in Pittsburgh. Hitting, fielding & skill development from a former collegiate player. Book today!",
     url: 'https://degoriproformance.com',
     siteName: 'DeGori Proformance',
     images: [
@@ -45,12 +46,14 @@ export const metadata: Metadata = {
   },
 };
 
-import { ReactNode } from "react";
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <html>
-      <body className={cn('text-base antialiased isolate dark', inter.className)}>{children}</body>
+      <body className={cn('text-base antialiased isolate dark', inter.className)}>
+        <AuthGuard>
+          {children}
+        </AuthGuard>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { OpenPanelComponent } from '@openpanel/nextjs';
 
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -50,6 +51,17 @@ import { ReactNode } from "react";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html>
+      <head>
+        <OpenPanelComponent
+        clientId="1cb51690-c70c-4059-939b-988751817f67"
+        clientSecret="sec_65380d7e9b128e7f2177"
+        trackScreenViews={true}
+        trackAttributes={true}
+        trackOutgoingLinks={true}
+        // If you have a user id, you can pass it here to identify the user
+        // profileId={'123'}
+        />
+      </head>
       <body className={cn('text-base antialiased isolate bg-background', inter.className)}>{children}</body>
     </html>
   );

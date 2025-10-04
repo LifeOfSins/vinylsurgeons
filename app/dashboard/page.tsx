@@ -1,75 +1,54 @@
-'use client'
-import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabaseClient'
-import { useRouter } from 'next/navigation'
-import { Button } from '@/components/ui/button'
+import { AppSidebar } from "@/components/app-sidebar"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
 
-export default function Dashboard() {
-  const [user, setUser] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
-  const router = useRouter()
+import StatisticCard3 from "@/components/statistic-card-4"
+import StatisticCard4 from "@/components/statistic-card-4"
+import FormTable from "@/components/form-table"
 
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) {
-        router.push('/dashboard/sign-in')
-      } else {
-        setUser(user)
-      }
-      setLoading(false)
-    }
-
-    getUser()
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (event === 'SIGNED_OUT' || !session) {
-          router.push('/dashboard/sign-in')
-        } else {
-          setUser(session.user)
-        }
-      }
-    )
-
-    return () => subscription.unsubscribe()
-  }, [router])
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-  }
-
-  if (loading) {
-    return <div className="flex items-center justify-center min-h-screen">Loading...</div>
-  }
-
-  if (!user) {
-    return null
-  }
-
+export default function Page() {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold">Dashboard</h1>
-            <Button onClick={handleSignOut} variant="outline">
-              Sign Out
-            </Button>
+    <SidebarProvider className="dark">
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+          <div className="flex items-center gap-2 px-4">
+            <SidebarTrigger className="-ml-1 text-primary" />
+            <Separator
+              orientation="vertical"
+              className="mr-2 data-[orientation=vertical]:h-4"
+            />
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem className="hidden md:block">
+                  <BreadcrumbLink href="#">
+                    Admin Dashboard
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="hidden md:block" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Home</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
-          
-          <div className="space-y-4">
-            <p>Welcome to your dashboard!</p>
-            <div className="bg-gray-100 p-4 rounded">
-              <p className="font-semibold">User Information:</p>
-              <p>Email: {user.email}</p>
-              <p>User ID: {user.id}</p>
-              <p>Confirmed: {user.email_confirmed_at ? 'Yes' : 'No'}</p>
-            </div>
-          </div>
+        </header>
+        <div className="flex flex-1 flex-col p-4">
+          <FormTable />
         </div>
-      </div>
-    </div>
+      </SidebarInset>
+    </SidebarProvider>
   )
 }

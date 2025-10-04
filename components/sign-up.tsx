@@ -11,6 +11,9 @@ import { Alert, AlertIcon, AlertTitle } from '@/components/ui/alert'
 import { TriangleAlert } from 'lucide-react'
 
 export default function SignUpPage() {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -33,6 +36,14 @@ export default function SignUpPage() {
             const { data, error } = await supabase.auth.signUp({
                 email,
                 password,
+                options: {
+                    data: {
+                        first_name: firstName,
+                        last_name: lastName,
+                        full_name: `${firstName} ${lastName}`.trim(),
+                        phone: phone,
+                    }
+                }
             })
 
             if (error) {
@@ -97,6 +108,8 @@ export default function SignUpPage() {
                                     required
                                     name="firstname"
                                     id="firstname"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
                                 />
                             </div>
                             <div className="space-y-2">
@@ -110,6 +123,8 @@ export default function SignUpPage() {
                                     required
                                     name="lastname"
                                     id="lastname"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -117,7 +132,7 @@ export default function SignUpPage() {
                         <div className="grid grid-cols-2 gap-3">
                             <div className="space-y-2">
                                 <Label
-                                    htmlFor="email"
+                                    htmlFor="phone"
                                     className="block text-sm">
                                     Phone Number
                                 </Label>
@@ -126,6 +141,8 @@ export default function SignUpPage() {
                                     required
                                     name="phone"
                                     id="phone"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
                                 />
                             </div>
                             <div className="space-y-2">
