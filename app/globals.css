@@ -36,13 +36,13 @@
 }
 
 .dark {
-  --background: #fc0404;
+  --background: #0a0a0a;
   --foreground: var(--color-zinc-50);
   --card: #0a0a0a;
   --card-foreground: var(--color-zinc-50);
   --popover: var(--color-zinc-950);
   --popover-foreground: var(--color-zinc-50);
-  --primary: #850400;
+  --primary: #f13b7e;
   --primary-foreground: var(--color-white);
   --secondary: #5da9a7;
   --secondary-foreground: var(--color-zinc-50);
