@@ -415,7 +415,7 @@ export default function FormTable() {
             {/* Filter by status */}
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="outline">
+                <Button variant="default">
                   <FilterIcon
                     className="-ms-1"
                     size={16}
